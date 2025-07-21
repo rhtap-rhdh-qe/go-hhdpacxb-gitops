@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: go-hhdpacxb-gitops
+  description: This is GitOps manifest for go-hhdpacxb   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=go-hhdpacxb
+    backstage.io/kubernetes-id: go-hhdpacxb 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: go-hhdpacxb
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:go-hhdpacxb
